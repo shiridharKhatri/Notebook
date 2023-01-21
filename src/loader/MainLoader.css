@@ -1,0 +1,47 @@
+.MainloaderContainer{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 9999;
+}
+.loading {
+    background-color: transparent;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  }
+  
+  .loading div {
+    background-color: #9562ff;
+    width: 20px;
+    height: 20px;
+    margin: 20px;
+    border-radius: 50px;
+    animation-name: load912355;
+    animation-duration: .9s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    text-align: center;
+    justify-content: center;
+  }
+  
+  .loading .a {
+    animation-delay: .3s;
+  }
+  
+  .loading .u {
+    animation-delay: .6s;
+  }
+  
+  @keyframes load912355 {
+    0% {
+      transform: translateY(50px) scale(1);
+    }
+  
+    100% {
+      transform: translateY(10px) scale(1.8) rotate(360deg);
+    }
+  }

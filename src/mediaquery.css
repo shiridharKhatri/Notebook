@@ -1,0 +1,336 @@
+@media screen and (max-width: 765px) {
+  html {
+    font-size: 50%;
+    overflow: hidden;
+  }
+  header nav {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+    border: none;
+    transition: 0.3s ease;
+    left: -70rem;
+    /* display: none; */
+  }
+  .openMenu {
+    font-size: 5rem;
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+    display: block;
+    z-index: 999;
+  }
+  .close {
+    position: absolute;
+    font-size: 6rem;
+    right: 4rem;
+    top: 3rem;
+    z-index: 9999;
+    display: block;
+  }
+  .logoMain {
+    position: absolute;
+    top: 1rem;
+    left: 2rem;
+    height: 8rem;
+    display: block;
+  }
+  header nav .profile .description {
+    width: 52%;
+    display: block;
+    margin-left: 6rem;
+  }
+  header nav .profile .description h1 {
+    top: 4rem;
+    font-size: 3rem;
+  }
+  header nav .profile .description p {
+    font-size: 2rem;
+    top: 7.5rem;
+  }
+  header nav .footer button {
+    width: 100%;
+    height: 8rem;
+    font-size: 3.7rem;
+    position: absolute;
+    bottom: 0;
+  }
+  header nav .theme {
+    height: 8rem;
+  }
+  .hidden {
+    display: block;
+    font-size: 3rem;
+    font-weight: 400;
+  }
+  .logout {
+    display: none;
+  }
+  .home-item-Two {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+  }
+  .home-item-Two h1 {
+    width: 90%;
+    font-weight: 400;
+  }
+  .home .flex-display-home .home-item-One .authBtn button {
+    padding: 2rem;
+    width: 15rem;
+  }
+  .home .flex-display-home .home-item-One .logo img {
+    height: 8rem;
+  }
+  .signup .flex-display-signup .item-one img,
+  .login .flex-display-login .item-one img {
+    display: none;
+  }
+
+  .signup .flex-display-signup,
+  .login .flex-display-login {
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+  }
+  .signupText,
+  .LoginText {
+    position: absolute;
+    font-size: 4rem;
+    left: 0;
+    right: 0;
+    top: 8rem;
+    width: 100%;
+    text-align: center;
+  }
+  .goBack span {
+    height: 5.5rem;
+    width: 5.5rem;
+    font-size: 2rem;
+  }
+  .back {
+    display: none;
+  }
+  .goBack span::before,
+  .goBack span::after {
+    display: none;
+  }
+  .signup .flex-display-signup .item-two-validation,
+  .login .flex-display-login .item-two-login {
+    width: 100%;
+    height: 60rem;
+  }
+  .signup .flex-display-signup .item-two-validation form label,
+  .login .flex-display-login .item-two-login form label {
+    font-size: 3rem;
+    margin-top: 2rem;
+  }
+  .signup .flex-display-signup .item-two-validation form input,
+  .login .flex-display-login .item-two-login form input {
+    padding: 1.7rem;
+  }
+  .signup .flex-display-signup .item-two-validation form button,
+  .login .flex-display-login .item-two-login form button {
+    padding: 2.5rem;
+    margin-top: 2rem;
+    width: 85%;
+  }
+  .signup .flex-display-signup .item-two-validation form button,
+  .login .flex-display-login .item-two-login form {
+    position: relative;
+    top: 2rem;
+  }
+  .signup .flex-display-signup .item-two-validation .alreadyHaveAnAccount,
+  .login .flex-display-login .item-two-login .dontHaveAnAccount {
+    font-size: 2rem;
+    margin-top: 3rem;
+  }
+  .contactus a span i {
+    height: 6rem;
+    width: 6rem;
+    font-size: 3rem;
+  }
+  .contactus h2 {
+    font-size: 2rem;
+  }
+  .contactus {
+    top: 98%;
+  }
+  .login .flex-display-login .item-two-login form h3 {
+    top: 0;
+    font-size: 1.5rem;
+  }
+  .homeContainer .intro h1 {
+    width: 100%;
+    text-align: center;
+  }
+  .homeContainer .intro h3 {
+    width: 90%;
+  }
+  .grid-display-notes {
+    grid-template-columns: repeat(1, 1fr);
+    margin-top: 9rem;
+  }
+  .header {
+    margin-bottom: 5rem;
+  }
+  header nav .profile .avatar {
+    height: 11rem;
+    width: 11rem;
+  }
+  .header h1 {
+    display: none;
+  }
+  .addmore {
+    font-size: 3rem;
+    margin-top: 4rem;
+  }
+  .notesTwo .cards p {
+    font-size: 1.9rem;
+  }
+  .title h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  .header img {
+    margin-top: 4rem;
+  }
+  .addnoteContainer .addnoteonclick {
+    height: 70%;
+    width: 90%;
+  }
+  .addnoteContainer .addnoteonclick form label {
+    font-size: 3rem;
+    width: 90%;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  .addnoteContainer .addnoteonclick form input {
+    padding: 2rem;
+  }
+  .addnoteContainer .addnoteonclick form textarea {
+    height: 20rem;
+  }
+  .addnoteContainer .addnoteonclick form button {
+    padding: 2rem;
+    width: 90%;
+    margin-top: 3rem;
+  }
+  .addnoteContainer .addnoteonclick h4 {
+    font-size: 4rem;
+    font-weight: 400;
+  }
+  header nav ul li a {
+    width: 90%;
+    justify-content: left;
+    font-size: 3rem;
+  }
+  header nav ul li a:hover {
+    height: 8rem;
+    width: 100%;
+  }
+  header nav ul li {
+    margin-top: auto;
+  }
+  .profileContainer .profilePicGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  header nav .profile {
+    height: 15rem;
+  }
+  header nav .menu {
+    display: none;
+  }
+  header nav .theme {
+    bottom: 8rem;
+    top: 85%;
+  }
+  .editNote .editNoteCard {
+    height: 70%;
+    width: 95%;
+  }
+  .editNote .editNoteCard h1,
+  span {
+    font-size: 4rem;
+  }
+  .editNote .editNoteCard form label {
+    font-size: 3rem;
+    width: 90%;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  .editNote .editNoteCard form input {
+    padding: 2rem;
+    width: 90%;
+  }
+  .editNote .editNoteCard form textarea {
+    height: 20rem;
+    width: 90%;
+  }
+  .editNote .editNoteCard form button {
+    padding: 2rem;
+    width: 90%;
+    margin-top: 3rem;
+  }
+  .fileUploadData {
+    height: 16rem;
+    width: 37rem;
+    left: 72rem;
+    top: 3.5rem;
+  }
+  .closephotomenu {
+    font-size: 3rem;
+  }
+  .homeContainer {
+    margin-left: 0;
+    width: 100%;
+  }
+  .homeContainer .overview .grid-overview-section {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 1rem;
+  }
+  .homeContainer .overview .grid-overview-section .totalnotes,
+  .totalPhotos {
+    width: 100%;
+  }
+  .homeContainer .recentActivities {
+    margin-top: 4rem;
+  }
+  .homeContainer .recentActivities .activities {
+    height: 89%;
+    margin-top: 2rem;
+  }
+  .homeContainer .intro {
+    height: 22%;
+  }
+}
+@media screen and (max-width: 480px) {
+  html {
+    font-size: 40%;
+  }
+  .home-item-Two {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+  }
+  .home-item-Two h1 {
+    width: 90%;
+  }
+  .home .flex-display-home .home-item-One .authBtn button {
+    padding: 2rem;
+    width: 15rem;
+  }
+  .home .flex-display-home .home-item-One .logo img {
+    height: 8rem;
+  }
+  .cssbuttons-io-button {
+    margin-top: 1rem;
+  }
+}
