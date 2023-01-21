@@ -11,6 +11,8 @@
     border: none;
     transition: 0.3s ease;
     left: -70rem;
+    margin: 0;
+    padding: 1rem;
     /* display: none; */
   }
   .openMenu {
@@ -25,7 +27,7 @@
     position: absolute;
     font-size: 6rem;
     right: 4rem;
-    top: 3rem;
+    top: 4rem;
     z-index: 9999;
     display: block;
   }
@@ -39,7 +41,7 @@
   header nav .profile .description {
     width: 52%;
     display: block;
-    margin-left: 6rem;
+    margin-left: 5rem;
   }
   header nav .profile .description h1 {
     top: 4rem;
@@ -49,16 +51,16 @@
     font-size: 2rem;
     top: 7.5rem;
   }
+  header nav .footer {
+    position: relative;
+    top: 23rem;
+  }
   header nav .footer button {
-    width: 100%;
+  width: 92%;
     height: 8rem;
-    font-size: 3.7rem;
-    position: absolute;
-    bottom: 0;
+    font-size: 3.7rem; 
   }
-  header nav .theme {
-    height: 8rem;
-  }
+
   .hidden {
     display: block;
     font-size: 3rem;
@@ -232,22 +234,25 @@
   header nav ul li a:hover {
     height: 8rem;
     width: 100%;
+    padding-left: 3rem;
   }
   header nav ul li {
-    margin-top: auto;
+    margin: 3rem;
   }
   .profileContainer .profilePicGrid {
     grid-template-columns: repeat(2, 1fr);
   }
   header nav .profile {
+    padding: 1rem;
     height: 15rem;
   }
   header nav .menu {
     display: none;
   }
   header nav .theme {
-    bottom: 8rem;
-    top: 85%;
+    top: 81%;
+    width: 88%;
+    height: 8rem;
   }
   .editNote .editNoteCard {
     height: 70%;
@@ -308,10 +313,20 @@
   .homeContainer .intro {
     height: 22%;
   }
+  header nav ul {
+    width: 100%;
+    height: 50%;
+    position: relative;
+    top: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    list-style: none;
+}
 }
 @media screen and (max-width: 480px) {
   html {
     font-size: 40%;
   }
-  
 }
