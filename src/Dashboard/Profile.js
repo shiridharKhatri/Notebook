@@ -5,6 +5,7 @@ import logo from "./image/logo/darkmode.png";
 import avatar from "./image/avatar.png";
 export default function Profile() {
   const context = useContext(Context);
+  const host = `https://notebook-backend-13xa.onrender.com`;
   useEffect(() => {
     context.fetchAvatar();
     context.fetchUsers();
@@ -55,7 +56,7 @@ export default function Profile() {
                     <i className="fa-solid fa-trash"></i>
                   </button>
                   <img
-                    src={`/images/${elems.avatar}`}
+                    src={`${host}/images/${elems.avatar}`}
                     alt="avatar"
                   />
                 </div>

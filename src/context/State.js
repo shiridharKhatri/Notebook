@@ -4,11 +4,11 @@ import Context from "./Context";
 const ContextState = (props) => {
   const nevigate = useNavigate();
   //All use states
-
   const [userData, setUserdata] = useState("");
   const [avatar, setAvatar] = useState({ profile: "" });
   const [noteData, setNoteData] = useState("");
   const [profile, setProfile] = useState("");
+  const host = `https://notebook-backend-13xa.onrender.com`;
   // fetch users
   const fetchUsers = async () => {
     let headersList = {
@@ -16,7 +16,7 @@ const ContextState = (props) => {
       "auth-token": localStorage.getItem("token"),
     };
 
-    let response = await fetch("/auth/fetchuser", {
+    let response = await fetch(`${host}/auth/fetchuser`, {
       method: "POST",
       headers: headersList,
     });
@@ -34,7 +34,7 @@ const ContextState = (props) => {
     let bodyContent = new FormData();
     bodyContent.append("avatar", valueAvatar);
 
-    let response = await fetch("/photo/avatar", {
+    let response = await fetch(`${host}/photo/avatar`, {
       method: "POST",
       body: bodyContent,
       headers: headersList,
@@ -52,7 +52,7 @@ const ContextState = (props) => {
       "auth-token": localStorage.getItem("token"),
     };
 
-    let response = await fetch("/photo/fetchAvatar", {
+    let response = await fetch(`${host}/photo/fetchAvatar`, {
       method: "GET",
       headers: headersList,
     });
@@ -60,7 +60,7 @@ const ContextState = (props) => {
     setProfile(data);
     Array.from(data).forEach((elems) => {
       setAvatar({
-        profile: `/images/${elems.avatar}`,
+        profile: `${host}/images/${elems.avatar}`,
       });
     });
   };
@@ -72,7 +72,7 @@ const ContextState = (props) => {
       "Content-type": "application/json",
       "auth-token": localStorage.getItem("token"),
     };
-    let response = await fetch(`/photo/deleteAvatar/${id}`, {
+    let response = await fetch(`${host}/photo/deleteAvatar/${id}`, {
       method: "DELETE",
       headers: header,
     });
@@ -88,7 +88,7 @@ const ContextState = (props) => {
       Accept: "*/*",
       "auth-token": localStorage.getItem("token"),
     };
-    const response = await fetch(`/notes/fetchnotes`, {
+    const response = await fetch(`${host}/notes/fetchnotes`, {
       method: "GET",
       headers: header,
     });
@@ -109,7 +109,7 @@ const ContextState = (props) => {
       discription: discription,
     });
 
-    let response = await fetch(`/notes/addnote`, {
+    let response = await fetch(`${host}/notes/addnote`, {
       method: "POST",
       body: bodyContent,
       headers: headersList,
@@ -129,7 +129,7 @@ const ContextState = (props) => {
       "auth-token": localStorage.getItem("token"),
     };
 
-    let response = await fetch(`/notes/deletenote/${id}`, {
+    let response = await fetch(`${host}/notes/deletenote/${id}`, {
       method: "DELETE",
       headers: headersList,
     });
@@ -153,7 +153,7 @@ const ContextState = (props) => {
       discription: discription,
     });
 
-    let response = await fetch(`/notes/updatenote/${id}`, {
+    let response = await fetch(`${host}/notes/updatenote/${id}`, {
       method: "PUT",
       body: bodyContent,
       headers: headersList,

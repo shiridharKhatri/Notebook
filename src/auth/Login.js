@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Loader from "../loader/Loader";
 export default function Login() {
   let nevigate = useNavigate();
-
+  const host = `https://notebook-backend-13xa.onrender.com`;
   //All use State 
   const [login, setLogin] = useState({ email: "", password: "" });
   const [loading, setLoading] = useState(false);
@@ -28,7 +28,7 @@ export default function Login() {
       password: login.password,
     });
   
-    let response = await fetch("/auth/login", {
+    let response = await fetch(`${host}/auth/login`, {
       method: "POST",
       body: bodyContent,
       headers: headersList,

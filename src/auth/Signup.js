@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Loader from "../loader/Loader";
 export default function Signup(props) {
   const nevigate = useNavigate();
-
+  const host = `https://notebook-backend-13xa.onrender.com`;
   //all the states
   const [signup, setSignup] = useState({
     name: "",
@@ -38,7 +38,7 @@ export default function Signup(props) {
       profession: signup.profession,
     });
 
-    let response = await fetch("/auth/signup", {
+    let response = await fetch(`${host}/auth/signup`, {
       method: "POST",
       body: bodyContent,
       headers: headersList,
