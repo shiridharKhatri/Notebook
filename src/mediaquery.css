@@ -313,24 +313,5 @@
   html {
     font-size: 40%;
   }
-  .home-item-Two {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 90%;
-  }
-  .home-item-Two h1 {
-    width: 90%;
-  }
-  .home .flex-display-home .home-item-One .authBtn button {
-    padding: 2rem;
-    width: 15rem;
-  }
-  .home .flex-display-home .home-item-One .logo img {
-    height: 8rem;
-  }
-  .cssbuttons-io-button {
-    margin-top: 1rem;
-  }
+  
 }

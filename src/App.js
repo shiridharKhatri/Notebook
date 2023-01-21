@@ -27,7 +27,8 @@ function App() {
   }, []);
   return (
     <>
-      <BrowserRouter basename="/e-notebook">
+    
+      <BrowserRouter>
         <ContextState>
           <LoadingBar color="#29a19c" progress={state.progress} height="7px" />
           <Routes>
