@@ -9,25 +9,25 @@
     position: fixed;
     z-index: 999;
     border: none;
-    transition: 0.3s ease;
+    transition: 0.3s cubic-bezier(0.1, 0.07, 0.2, 1.1);
     left: -70rem;
     margin: 0;
     padding: 1rem;
-    /* display: none; */
+    backdrop-filter: blur(1rem);
   }
   .openMenu {
     font-size: 5rem;
     position: absolute;
-    top: 1rem;
-    right: 2rem;
+    top: 2rem;
+    right: 4rem;
     display: block;
     z-index: 999;
   }
   .close {
     position: absolute;
-    font-size: 6rem;
+    font-size: 5rem;
     right: 4rem;
-    top: 4rem;
+    top: 5rem;
     z-index: 9999;
     display: block;
   }
@@ -77,21 +77,40 @@
     width: 90%;
   }
   .home-item-Two h1 {
-    width: 90%;
+    width: 100%;
     font-weight: 400;
+    font-size: 2.5rem;
   }
   .home .flex-display-home .home-item-One .authBtn button {
-    padding: 2rem;
     width: 15rem;
+    padding: 1.5rem;
+    font-size: 2.4rem;
   }
   .home .flex-display-home .home-item-One .logo img {
-    height: 8rem;
+    height: 6rem;
   }
   .signup .flex-display-signup .item-one img,
   .login .flex-display-login .item-one img {
     display: none;
   }
-
+  .slider {
+    height: 4rem;
+    width: 8rem;
+    top: -0.5rem; 
+}
+.slider:before {
+  content: "";
+  position: absolute;
+  height: 2.7rem;
+  width: 2.7rem;
+  bottom: 16%;
+}
+input:checked + .slider:before {
+  transform: translateX(3.5rem);
+}
+header nav .theme h1 {
+  font-size: 2.5rem;
+}
   .signup .flex-display-signup,
   .login .flex-display-login {
     width: 100%;
@@ -105,7 +124,7 @@
     font-size: 4rem;
     left: 0;
     right: 0;
-    top: 8rem;
+    top: 10rem;
     width: 100%;
     text-align: center;
   }
@@ -129,7 +148,7 @@
   .signup .flex-display-signup .item-two-validation form label,
   .login .flex-display-login .item-two-login form label {
     font-size: 3rem;
-    margin-top: 2rem;
+    margin-top: 1.5rem;
   }
   .signup .flex-display-signup .item-two-validation form input,
   .login .flex-display-login .item-two-login form input {
@@ -137,11 +156,21 @@
   }
   .signup .flex-display-signup .item-two-validation form button,
   .login .flex-display-login .item-two-login form button {
-    padding: 2.5rem;
+    color: #000;
     margin-top: 2rem;
+    padding: 3.2rem;
     width: 85%;
   }
-  .signup .flex-display-signup .item-two-validation form button,
+  .signup .flex-display-signup .item-two-validation form button:hover,
+.login .flex-display-login .item-two-login form button:hover {
+  border: 0.1rem solid #5ac3b0;
+  background-color: #5ac3b0;
+  color: #000;
+}
+  .signup .flex-display-signup .item-two-validation form p, .login .flex-display-login .item-two-login form p {
+    font-size: 1.4rem;
+}
+  .signup .flex-display-signup .item-two-validation form ,
   .login .flex-display-login .item-two-login form {
     position: relative;
     top: 2rem;
@@ -163,12 +192,16 @@
     top: 98%;
   }
   .login .flex-display-login .item-two-login form h3 {
-    top: 0;
     font-size: 1.5rem;
+    top: -5rem;
+    height: 5.5rem;
   }
   .homeContainer .intro h1 {
     width: 100%;
     text-align: center;
+  }
+  .home{
+    padding: 1rem;
   }
   .homeContainer .intro h3 {
     width: 90%;
@@ -191,6 +224,9 @@
     font-size: 3rem;
     margin-top: 4rem;
   }
+  .homeContainer .overview .grid-overview-section .totalnotes .addMore button, .totalPhotos .addMore button {
+    font-size: 4rem; 
+}
   .notesTwo .cards p {
     font-size: 1.9rem;
   }
@@ -200,9 +236,9 @@
   }
   .header img {
     margin-top: 4rem;
+    height: 6rem;
   }
   .addnoteContainer .addnoteonclick {
-    height: 70%;
     width: 90%;
   }
   .addnoteContainer .addnoteonclick form label {
@@ -255,7 +291,6 @@
     height: 8rem;
   }
   .editNote .editNoteCard {
-    height: 70%;
     width: 95%;
   }
   .editNote .editNoteCard h1,
@@ -294,6 +329,10 @@
     margin-left: 0;
     width: 100%;
   }
+  .homeContainer .overview {
+    width: 99%;
+    height: 35rem;
+  }
   .homeContainer .overview .grid-overview-section {
     flex-direction: column;
     width: 100%;
@@ -304,14 +343,31 @@
     width: 100%;
   }
   .homeContainer .recentActivities {
-    margin-top: 4rem;
+    margin-top: 0;
+    height: 30rem;
+    width: 99%;
   }
   .homeContainer .recentActivities .activities {
-    height: 89%;
+    height: 80%;
     margin-top: 2rem;
+    
   }
+  .homeContainer .recentActivities .activities p{
+    font-size: 2rem;
+    margin: 0;
+  }
+  .homeContainer .recentActivities .activities p span {
+    font-size: 1.5rem;
+}
   .homeContainer .intro {
-    height: 22%;
+    margin-top: 2rem;
+    width: 99%;
+    height: 18%;
+    /* background: rebeccapurple; */
+    border-bottom: .1rem solid rgba(255,255,255,0.3);
+  }
+  .cssbuttons-io-button{
+    margin-top: 2rem;
   }
   header nav ul {
     width: 100%;
@@ -323,6 +379,14 @@
     align-items: center;
     flex-direction: column;
     list-style: none;
+}
+.homeContainer h5 {
+  font-size: 3rem;
+}
+.addnoteContainer .addnoteonclick form button:hover {
+  background-color: var(--color);
+  border: 0.1rem solid var(--color);
+  color: #000;
 }
 }
 @media screen and (max-width: 480px) {

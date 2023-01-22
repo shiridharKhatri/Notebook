@@ -1,13 +1,16 @@
 import React, { useState, useContext } from "react";
 import Context from "../context/Context";
+import Loader from "../loader/Loader";
 export default function AddNote() {
   const context = useContext(Context);
   const [add, setAdd] = useState({ title: "", discription: "" });
+  const [loader, setLoader] = useState(false)
   const addNoteOnChange = (e) => {
     setAdd({ ...add, [e.target.name]: e.target.value });
   };
   const addNoteOnSubmitForm = (e) => {
     e.preventDefault();
+    setLoader(true)
     context.addNote(add.title, add.discription);
   };
   return (
@@ -46,9 +49,10 @@ export default function AddNote() {
             name="discription"
             id="discription"
           />
-          <button>
+         {(loader === false)?<button>
             <i className="fa-solid fa-circle-plus"></i> Add Note
           </button>
+          :<button><Loader/></button>}
         </form>
       </div>
     </div>

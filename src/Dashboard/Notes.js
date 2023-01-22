@@ -6,16 +6,30 @@ import Login from "../auth/Login";
 import Context from "../context/Context";
 import AddNote from "./Addnote";
 import Editnote from "./Editnote";
-export default function Notes() {
+import MainLoader from "../loader/MainLoader";
+export default function Notes(props) {
   let context = useContext(Context);
   const [text, setText] = useState({title:"", description:""})
   const [ids, setId] = useState("")
+  const [loader, setLoader] = useState(false);
   useEffect(() => {
     context.fetchNotes();
+    if(!context.fetchNotes()){
+      setLoader(true)
+    }else{
+      setLoader(false)
+    }
     // eslint-disable-next-line
   }, []);
   const deleteNotes = (id) => {
+    props.progress(25);
+    setLoader(true)
     context.deleteNote(id);
+    props.progress(50);
+    if(context.deleteNote()){
+      setLoader(false)
+      props.progress(85);
+    }
   };
   const editOnChange = (e)=>{
     setText({...text, [e.target.id]:e.target.value})
@@ -38,8 +52,14 @@ export default function Notes() {
     setText({title:title, description:description})
   };
   const editOnClick =(e)=>{
+    setLoader(true)
     e.preventDefault()
     context.editNotes(text.title, text.description, ids);
+    if(!context.editNotes(text.title, text.description, ids)){
+      setLoader(true)
+    }else{
+      setLoader(false)
+    }
   }
   return (
     <>
@@ -48,6 +68,7 @@ export default function Notes() {
         description={text.description}
         editOnChange={editOnChange}
         ChangeOnClick={editOnClick}
+        loader = {loader}
       />
       {localStorage.getItem("token") ? (
         context.noteData.length <= 0 ? (
@@ -109,7 +130,7 @@ export default function Notes() {
               </button>
               <AddNote />
             </div>
-            <div className="grid-display-notes">
+            {(loader === true)?<MainLoader/>: <div className="grid-display-notes">
               {Array.from(context.noteData).map((elems) => {
                 return (
                   <div className="cards" key={elems._id}>
@@ -150,7 +171,7 @@ export default function Notes() {
                   </div>
                 );
               })}
-            </div>
+            </div>}
           </div>
         )
       ) : (

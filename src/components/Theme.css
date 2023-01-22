@@ -2,7 +2,9 @@
 .switch {
   font-size:1.7rem;
   position: relative;
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 6rem;
   height: 3rem;
 }
@@ -17,12 +19,14 @@
 /* The slider */
 .slider {
   --background: #9562ff;
-  position: absolute;
+  position: relative;
   cursor: pointer;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+  height: 100%;
+  width: 100%;
   background-color: var(--background);
   transition: .4s;
   border-radius:3rem;
@@ -35,7 +39,7 @@
   width: 2.4rem;
   border-radius: 50%;
   left: 10%;
-  bottom: 12%;
+  bottom: 10%;
   box-shadow: inset 8px -4px 0px 0px #fff000;
   background: var(--background);
   transition: .5s;

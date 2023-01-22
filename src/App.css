@@ -1118,6 +1118,9 @@ header nav ul li a i {
   background-color: var(--color);
   border: 0.1rem solid var(--color);
   color: #fff;
+  display: flex;
+    justify-content: center;
+    align-items: center;
   cursor: pointer;
 }
 .addnoteContainer .addnoteonclick form button:hover {

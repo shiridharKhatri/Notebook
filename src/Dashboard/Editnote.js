@@ -1,4 +1,5 @@
 import React from "react";
+import Loader from "../loader/Loader";
 export default function Editnote(props) {
   return (
     <div className="editNote">
@@ -30,7 +31,10 @@ export default function Editnote(props) {
             value={props.description}
             onChange={props.editOnChange}
           />
-          <button  onClick={props.ChangeOnClick}>Save Changes</button>
+           {(props.loader === false)?<button>
+            <i className="fa-solid fa-circle-plus"></i> Save changes
+          </button>
+          :<button><Loader/></button>}
         </form>
       </div>
     </div>

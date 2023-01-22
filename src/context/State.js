@@ -20,7 +20,6 @@ const ContextState = (props) => {
       method: "POST",
       headers: headersList,
     });
-
     let data = await response.json();
     setUserdata(data);
   };

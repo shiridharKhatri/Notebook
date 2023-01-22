@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import picture from "./images/login.png";
 import { Link, useNavigate } from "react-router-dom";
 import Loader from "../loader/Loader";
-export default function Login() {
+export default function Login(props) {
   let nevigate = useNavigate();
   const host = `https://notebook-backend-13xa.onrender.com`;
   //All use State 
@@ -17,7 +17,6 @@ export default function Login() {
   const Login = async (e) => {
     e.preventDefault();
     setLoading(true);
-
     let headersList = {
       Accept: "*/*",
       "Content-Type": "application/json",
@@ -27,13 +26,11 @@ export default function Login() {
       email: login.email,
       password: login.password,
     });
-  
     let response = await fetch(`${host}/auth/login`, {
       method: "POST",
       body: bodyContent,
       headers: headersList,
     });
-
     let data = await response.json();
     console.log(data)
     if (data.success === true) {
