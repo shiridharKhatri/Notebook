@@ -326,10 +326,21 @@ header nav .theme h1 {
   }
   .fileUploadData {
     height: 16rem;
-    width: 37rem;
-    left: 72rem;
+    left: 57rem;
     top: 3.5rem;
+    width: 30rem;
   }
+  .fileUploadData button {
+    background-color: #9562ff;
+    border: none;
+    border-radius: .5rem;
+    bottom: 1rem;
+    cursor: pointer;
+    padding: 1.5rem;
+    position: absolute;
+    transition: .2s ease;
+    width: 92%;
+}
   .closephotomenu {
     font-size: 3rem;
   }
