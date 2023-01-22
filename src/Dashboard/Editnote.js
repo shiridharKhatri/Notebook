@@ -15,7 +15,7 @@ export default function Editnote(props) {
             <i className="fa-solid fa-xmark"></i>
           </span>
         </h1>
-        <form >
+        <form onSubmit={props.ChangeOnClick}>
           <label htmlFor="title">Title</label>
           <input
             type="text"
@@ -32,7 +32,7 @@ export default function Editnote(props) {
             onChange={props.editOnChange}
           />
            {(props.loader === false)?<button>
-            <i className="fa-solid fa-circle-plus"></i> Save changes
+            <i className="fa-solid fa-circle-plus"></i>&nbsp;Save changes
           </button>
           :<button><Loader/></button>}
         </form>

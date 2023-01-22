@@ -100,7 +100,7 @@ export default function Nevbar(props) {
       <nav>
       <div onClick={()=>{
         let nav = document.querySelector('nav');
-        nav.style.left = "-70rem";
+        nav.style.left = "-100%";
       }} className="close"><i className="fa-solid fa-xmark"></i></div>
         <div className="menu">
           

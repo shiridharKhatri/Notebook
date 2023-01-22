@@ -12,6 +12,7 @@ export default function Notes(props) {
   const [text, setText] = useState({title:"", description:""})
   const [ids, setId] = useState("")
   const [loader, setLoader] = useState(false);
+  const [loaderTwo, setLoaderTwo] = useState(false);
   useEffect(() => {
     context.fetchNotes();
     if(!context.fetchNotes()){
@@ -52,7 +53,7 @@ export default function Notes(props) {
     setText({title:title, description:description})
   };
   const editOnClick =(e)=>{
-    setLoader(true)
+    setLoaderTwo(true)
     e.preventDefault()
     context.editNotes(text.title, text.description, ids);
     if(!context.editNotes(text.title, text.description, ids)){
@@ -68,7 +69,7 @@ export default function Notes(props) {
         description={text.description}
         editOnChange={editOnChange}
         ChangeOnClick={editOnClick}
-        loader = {loader}
+        loader = {loaderTwo}
       />
       {localStorage.getItem("token") ? (
         context.noteData.length <= 0 ? (
