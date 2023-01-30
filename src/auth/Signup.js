@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Loader from "../loader/Loader";
 export default function Signup(props) {
   const nevigate = useNavigate();
-  const host = `https://notebook-backend-13xa.onrender.com`;
+  const host = process.env.REACT_APP_HOST;
   //all the states
   const [signup, setSignup] = useState({
     name: "",
@@ -112,7 +112,7 @@ export default function Signup(props) {
                   value={signup.name}
                   type="text"
                   id="name"
-                  placeholder="Enter your full name"
+                  placeholder="Your name"
                 />
                 <p>{error.name}</p>
               </div>

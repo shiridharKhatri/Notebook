@@ -1,4 +1,4 @@
-import React, { useEffect, useContext, useState } from "react";
+import React, { useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import Login from "../auth/Login";
 import Context from "../context/Context";
@@ -8,43 +8,38 @@ import Nevbar from "./Nevbar";
 export default function Dashboard() {
   const context = useContext(Context);
   const nevigate = useNavigate();
-  const [loader, setLoader] = useState(true);
   useEffect(() => {
     context.fetchUsers();
     context.fetchNotes();
     context.fetchAvatar();
-    if (
-      (!context.fetchUsers(), !context.fetchNotes(), !context.fetchAvatar())
-    ) {
-      setLoader(true);
-    } else {
-      setLoader(false);
-    }
     // eslint-disable-next-line
   }, []);
   return (
     <>
-      {localStorage.getItem("token") ? (
+      {(localStorage.getItem('token')) ? (
         <div className="container">
-          {loader === true ? (
+          {context.loader === true ? (
             <MainLoader />
           ) : (
             <header>
-              <img className="logoMain" src={logoMain} alt="logoMain" />
-              <div
-                onClick={() => {
-                  let nav = document.querySelector("nav");
-                  nav.style.left = "0";
-                }}
-                className="openMenu"
-              >
-                <i className="fa-solid fa-bars"></i>
-              </div>
               <Nevbar
                 name={context.userData.name}
                 profession={context.userData.profession}
               />
               <div className="homeContainer">
+                <div className="headerContainer">
+                <img className="logoMain" src={logoMain} alt="logoMain" />
+              <div
+                onClick={() => {
+                  let nav = document.querySelector("nav");
+                  nav.style.bottom = "0";
+                }}
+                className="openMenu"
+              >
+                <i className="fa-solid fa-bars"></i>
+              </div>
+                </div>
+            
                 <div className="intro">
                   <h1 style={{ color: "white" }}>
                     Hello! <span>{context.userData.name}</span>

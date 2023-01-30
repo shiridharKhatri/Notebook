@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Theme from "../components/Theme";
 import Context from "../context/Context";
+// import DeleteAccount from "./DeleteAccount";
 import avatar from "./image/avatar.png";
 
 export default function Nevbar(props) {
@@ -97,20 +98,16 @@ export default function Nevbar(props) {
 
   return (
     <>
+    {/* <DeleteAccount/> */}
       <nav>
-      <div onClick={()=>{
-        let nav = document.querySelector('nav');
-        nav.style.left = "-100%";
-      }} className="close"><i className="fa-solid fa-xmark"></i></div>
+      <div className="navContainer">
         <div className="menu">
-          
           <label htmlFor="toggleOnClick">
             <i className={icon}></i>
           </label>
           <input onChange={onChangeState} type="checkbox" id="toggleOnClick" />
         </div>
         <div className="profile">
-        
           <h5
             onClick={uploadSectonOnClick}
             style={{ fontWeight: "400" }}
@@ -142,6 +139,10 @@ export default function Nevbar(props) {
             <h1>{props.name}</h1>
             <p>{props.profession}</p>
           </div>
+          <div onClick={()=>{
+        let nav = document.querySelector('nav');
+        nav.style.bottom = "-100%";
+      }} className="close"><i className="fa-solid fa-angle-down"></i></div>
         </div>
         <ul>
           <li>
@@ -162,16 +163,17 @@ export default function Nevbar(props) {
               <span className="hidden"> Notes </span>
             </Link>
           </li>
-          <li>
-            <Link className="iconsLink" to="/dashboard">
-              <i className="fa-solid fa-calendar-check"></i>
-              <span className="hidden"> Todo </span>
-            </Link>
-          </li>
+        
           <li>
             <Link to="notes" className="iconsLink">
               <i className="fa-solid fa-circle-plus"></i>
               <span className="hidden"> Add Note </span>
+            </Link>
+          </li>
+          <li >
+            <Link style={{color:"#E10600",fontWeight:"400"}} className="iconsLink deleteId" to="deleteAccount">
+              <i className="fa-solid fa-user-slash"></i>
+              <span className="hidden"> Remove Account </span>
             </Link>
           </li>
         </ul>
@@ -188,6 +190,7 @@ export default function Nevbar(props) {
             <span className="hidden logout">Logout</span>{" "}
             <i className="fa-solid fa-arrow-right-from-bracket"></i>
           </button>
+        </div>
         </div>
       </nav>
     </>

@@ -6,29 +6,20 @@ import Login from "../auth/Login";
 import Context from "../context/Context";
 import AddNote from "./Addnote";
 import Editnote from "./Editnote";
-import MainLoader from "../loader/MainLoader";
 export default function Notes(props) {
   let context = useContext(Context);
   const [text, setText] = useState({title:"", description:""})
   const [ids, setId] = useState("")
-  const [loader, setLoader] = useState(false);
   const [loaderTwo, setLoaderTwo] = useState(false);
   useEffect(() => {
     context.fetchNotes();
-    if(!context.fetchNotes()){
-      setLoader(true)
-    }else{
-      setLoader(false)
-    }
     // eslint-disable-next-line
   }, []);
   const deleteNotes = (id) => {
     props.progress(25);
-    setLoader(true)
     context.deleteNote(id);
     props.progress(50);
     if(context.deleteNote()){
-      setLoader(false)
       props.progress(85);
     }
   };
@@ -56,11 +47,6 @@ export default function Notes(props) {
     setLoaderTwo(true)
     e.preventDefault()
     context.editNotes(text.title, text.description, ids);
-    if(!context.editNotes(text.title, text.description, ids)){
-      setLoader(true)
-    }else{
-      setLoader(false)
-    }
   }
   return (
     <>
@@ -131,8 +117,8 @@ export default function Notes(props) {
               </button>
               <AddNote />
             </div>
-            {(loader === true)?<MainLoader/>: <div className="grid-display-notes">
-              {Array.from(context.noteData).map((elems) => {
+             <div className="grid-display-notes">
+              {context.loader && Array.from(context.noteData).map((elems) => {
                 return (
                   <div className="cards" key={elems._id}>
                     <div className="title">
@@ -172,7 +158,7 @@ export default function Notes(props) {
                   </div>
                 );
               })}
-            </div>}
+            </div>
           </div>
         )
       ) : (

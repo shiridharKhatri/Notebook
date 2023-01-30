@@ -8,7 +8,8 @@ const ContextState = (props) => {
   const [avatar, setAvatar] = useState({ profile: "" });
   const [noteData, setNoteData] = useState("");
   const [profile, setProfile] = useState("");
-  const host = `https://notebook-backend-13xa.onrender.com`;
+  const [loader, setLoader] = useState(true);
+  const host = process.env.REACT_APP_HOST;
   // fetch users
   const fetchUsers = async () => {
     let headersList = {
@@ -21,7 +22,10 @@ const ContextState = (props) => {
       headers: headersList,
     });
     let data = await response.json();
-    setUserdata(data);
+    setUserdata(data.user);
+    if(data.success === true){
+      setLoader(false)
+    }
   };
 
   //for fetching avatar and potsting it
@@ -93,6 +97,9 @@ const ContextState = (props) => {
     });
     const notesData = await response.json();
     setNoteData(notesData);
+    if(notesData.success === true){
+      setLoader(false)
+    }
   };
 
   //add Note
@@ -164,6 +171,31 @@ const ContextState = (props) => {
     }
   };
 
+  //delete user account
+  const deleteAccount = async(email)=>{
+    let headersList = {
+      "Accept": "*/*",
+      "Content-Type": "application/json",
+      "auth-token":localStorage.getItem('token')
+     }
+     
+     let bodyContent = JSON.stringify({
+       "email":email
+     });
+     
+     let response = await fetch(`${host}/auth/deleteAccount`, { 
+       method: "DELETE",
+       body: bodyContent,
+       headers: headersList
+     });
+     
+     let data = await response.json();
+     if(data.success === true){
+      nevigate('/login');
+      localStorage.removeItem('token')
+     }
+  }
+
   return (
     <Context.Provider
       value={{
@@ -178,7 +210,9 @@ const ContextState = (props) => {
         deleteNote,
         profile,
         deleteAvatar,
-        editNotes
+        editNotes,
+        deleteAccount,
+        loader
       }}
     >
       {props.children}

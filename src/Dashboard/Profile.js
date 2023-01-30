@@ -5,7 +5,7 @@ import logo from "./image/logo/darkmode.png";
 import avatar from "./image/avatar.png";
 export default function Profile() {
   const context = useContext(Context);
-  const host = `https://notebook-backend-13xa.onrender.com`;
+  const host = process.env.REACT_APP_HOST;
   useEffect(() => {
     context.fetchAvatar();
     context.fetchUsers();

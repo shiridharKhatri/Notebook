@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import picture from "./images/login.png";
 import { Link, useNavigate } from "react-router-dom";
 import Loader from "../loader/Loader";
-export default function Login(props) {
+export default function Login() {
   let nevigate = useNavigate();
-  const host = `https://notebook-backend-13xa.onrender.com`;
+  const host = process.env.REACT_APP_HOST;
   //All use State 
   const [login, setLogin] = useState({ email: "", password: "" });
   const [loading, setLoading] = useState(false);
@@ -109,8 +109,9 @@ export default function Login(props) {
             />
             <p></p>
             <button>{loading === true ? <Loader /> : "Login"}</button>
+            <Link className="forgetPassword" to="/forgetPassword">Forget password?</Link>
             <Link className="dontHaveAnAccount" to="/signup">
-              Don't have an account? Signup
+              <button className="signup-btn">Create new account</button> 
             </Link>
           </form>
           <div className="contactus">

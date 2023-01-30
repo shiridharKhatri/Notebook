@@ -10,6 +10,8 @@ import { useEffect, useState } from "react";
 import Dashboard from "./Dashboard/Dashboard";
 import Notes from "./Dashboard/Notes";
 import Profile from "./Dashboard/Profile";
+import ForgetPas from "./auth/ForgetPas";
+import DeleteAccount from "./Dashboard/DeleteAccount";
 function App() {
   const [state, setState] = useState({
     progress: 0,
@@ -27,13 +29,14 @@ function App() {
   }, []);
   return (
     <>
-      <BrowserRouter basename="/e-notebook">
+      <BrowserRouter basename="/Notebook">
         <ContextState>
           <LoadingBar color="#29a19c" progress={state.progress} height="7px" />
           <Routes>
             <Route path="*" element={<Home />} />
             <Route path="/login" element={<Login progress={progressBar} />} />
             <Route path="/signup" element={<Signup progress={progressBar} />} />
+            <Route path="/forgetPassword" element={<ForgetPas progress={progressBar} />} />
             <Route
               path="/dashboard"
               element={<Dashboard progress={progressBar} />}
@@ -43,6 +46,11 @@ function App() {
               path="/dashboard/profile"
               element={<Profile progress={progressBar} />}
             />
+            <Route
+              path="/dashboard/deleteAccount"
+              element={<DeleteAccount progress={progressBar} />}
+            />
+           
           </Routes>
         </ContextState>
       </BrowserRouter>
