@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/Notebook/static/css/main.3a094995.css",
+    "main.js": "/Notebook/static/js/main.2acc9db8.js",
+    "static/js/787.c4e7f8f9.chunk.js": "/Notebook/static/js/787.c4e7f8f9.chunk.js",
+    "static/media/signup.png": "/Notebook/static/media/signup.1a65ac6f7d9f5b1b049b.png",
+    "static/media/login.png": "/Notebook/static/media/login.624ebf990ac2353eeac3.png",
+    "static/media/homeWal.png": "/Notebook/static/media/homeWal.81233e05ce820218672e.png",
+    "static/media/nonote.png": "/Notebook/static/media/nonote.52820d114b02c37fb91e.png",
+    "static/media/avatar.png": "/Notebook/static/media/avatar.bd082a2c04590da64cd0.png",
+    "static/media/success.png": "/Notebook/static/media/success.37e09778c3460431de33.png",
+    "static/media/darkmode.png": "/Notebook/static/media/darkmode.e695ba32ed1f2f805c96.png",
+    "index.html": "/Notebook/index.html",
+    "main.3a094995.css.map": "/Notebook/static/css/main.3a094995.css.map",
+    "main.2acc9db8.js.map": "/Notebook/static/js/main.2acc9db8.js.map",
+    "787.c4e7f8f9.chunk.js.map": "/Notebook/static/js/787.c4e7f8f9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3a094995.css",
+    "static/js/main.2acc9db8.js"
+  ]
+}
