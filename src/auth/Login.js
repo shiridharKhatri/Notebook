@@ -32,7 +32,6 @@ export default function Login() {
       headers: headersList,
     });
     let data = await response.json();
-    console.log(data)
     if (data.success === true) {
       localStorage.setItem("token", data.token);
       nevigate("/dashboard");
